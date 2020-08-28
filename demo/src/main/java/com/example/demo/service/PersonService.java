@@ -13,13 +13,10 @@ import com.example.demo.model.Person;
 
 @Service
 public class PersonService {
-	
-	@Qualifier("postgres")
 	private final PersonDao personDao;
 	
-	
 	@Autowired
-	public PersonService( PersonDao personDao) {
+	public PersonService(@Qualifier("postgres") PersonDao personDao) {
 		this.personDao = personDao;
 	}
 	
